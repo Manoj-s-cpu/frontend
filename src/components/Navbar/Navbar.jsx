@@ -133,9 +133,9 @@ function Navbar({ user, setUser }) {
             >
               <button className="menu-link">Home </button>
               <ul className={`dropdown-menu ${activeDropdown === "features" ? "show" : ""}`}>
-                <li><a href="#f1">Overview</a></li>
-                <li><a href="#f2">Updates</a></li>
-                <li><a href="#f3">Gallery</a></li>
+                <li><a href="#f1">Welcome</a></li>
+                <li><a href="#f2">News & Updates</a></li>
+                <li><a href="#f3">Success Stories</a></li>
               </ul>
             </li>
 
@@ -146,9 +146,9 @@ function Navbar({ user, setUser }) {
             >
               <button className="menu-link">Features </button>
               <ul className={`dropdown-menu ${activeDropdown === "features" ? "show" : ""}`}>
-                <li><a href="#f1">Dashboard</a></li>
-                <li><a href="#f2">Analytics</a></li>
-                <li><a href="#f3">Report</a></li>
+                <li><a href="#f1">Smart Tools</a></li>
+                <li><a href="#f2">Collaboration</a></li>
+                <li><a href="#f3">Security</a></li>
               </ul>
             </li>
 
@@ -159,7 +159,7 @@ function Navbar({ user, setUser }) {
             >
               <button className="menu-link">Members </button>
               <ul className={`dropdown-menu ${activeDropdown === "members" ? "show" : ""}`}>
-                <li><a href="#m1">Member List</a></li>
+                <li><a href="#m1">Profile</a></li>
                 <li><a href="#m2">Member Profile</a></li>
                 <li><a href="#m2">Member Benifit</a></li>
               </ul>
@@ -172,8 +172,8 @@ function Navbar({ user, setUser }) {
             >
               <button className="menu-link">Blog </button>
               <ul className={`dropdown-menu ${activeDropdown === "blog" ? "show" : ""}`}>
-                <li><a href="#b1">Latest</a></li>
-                <li><a href="#b2">Popular</a></li>
+                <li><a href="#b1">Tech Insights</a></li>
+                <li><a href="#b2">Interviews</a></li>
               </ul>
             </li>
 
@@ -184,8 +184,8 @@ function Navbar({ user, setUser }) {
             >
               <button className="menu-link">Pricing</button>
               <ul className={`dropdown-menu ${activeDropdown === "pricing" ? "show" : ""}`}>
-                <li><a href="#b1"> Unlimited Projects</a></li>
-                <li><a href="#b2">100 GB Storage</a></li>
+                <li><a href="#b1"> Free Trial</a></li>
+                <li><a href="#b2">Business Plan</a></li>
               </ul>
             </li>
 
