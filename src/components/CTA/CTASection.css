@@ -1,0 +1,124 @@
+/* ===== CTA Base ===== */
+.cta {
+  background-color: #f8fafc;  /* light gray bg */
+  text-align: center;
+  padding: 60px 80px;
+}
+
+/* Title Animation */
+.cta-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1f2937;  /* dark gray */
+  margin-bottom: 30px;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: ctaTextFadeUp 0.8s ease-out forwards;
+}
+
+/* ===== PREMIUM Button ===== */
+.cta-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);  /* gradient green */
+  color: #fff;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* First Appear */
+  opacity: 0;
+  transform: translateY(20px) scale(0.9) rotate(-5deg);
+  animation:
+    ctaBtnSpinFade 0.9s ease-out forwards,
+    glowPulse 2.2s ease-in-out infinite 1.2s;
+  animation-delay: 0.6s, 1.2s;
+}
+
+/* 🌟 Hover Premium Effect */
+.cta-btn:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  transform: scale(1.1) rotate(0deg);
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.7),
+    0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+/* 🌊 Ripple on Click */
+.cta-btn:active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: rippleEffect 0.6s ease-out;
+}
+
+/* 🚫 Remove focus outline */
+.cta-btn:focus,
+.cta-btn:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== Keyframes ===== */
+
+/* Text Fade Up */
+@keyframes ctaTextFadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Button Fade + Tilt */
+@keyframes ctaBtnSpinFade {
+  0% { opacity: 0; transform: translateY(20px) scale(0.9) rotate(-5deg); }
+  60% { opacity: 1; transform: translateY(-6px) scale(1.05) rotate(3deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 4px rgba(34, 197, 94, 0.4), 0 0 10px rgba(34, 197, 94, 0.25); }
+  50% { box-shadow: 0 0 12px rgba(22, 163, 74, 0.7), 0 0 24px rgba(22, 163, 74, 0.5); }
+  100% { box-shadow: 0 0 4px rgba(34, 197, 94, 0.4), 0 0 10px rgba(34, 197, 94, 0.25); }
+}
+
+/* Ripple Effect */
+@keyframes rippleEffect {
+  from { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  to { transform: translate(-50%, -50%) scale(18); opacity: 0; }
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .cta { padding: 50px 40px; }
+  .cta-title { font-size: 36px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cta { padding: 40px 20px; }
+  .cta-title { font-size: 28px; }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .cta { padding: 30px 15px; }
+  .cta-title { font-size: 24px; }
+}
+
+/* Extra Small */
+@media (max-width: 360px) {
+  .cta-title { font-size: 20px; margin-bottom: 20px; }
+}

@@ -1,0 +1,9 @@
+/* initially animation paused */
+.reveal-on-scroll * {
+  animation-play-state: paused !important;
+}
+
+/* when in view → animation runs */
+.reveal-on-scroll.inview * {
+  animation-play-state: running !important;
+}

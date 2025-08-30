@@ -1,0 +1,41 @@
+.cta-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f4f4f4;
+  border-radius: 12px;
+  margin: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.cta-line {
+  height: 20px;
+  background: #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.cta-line.title {
+  width: 60%;
+  height: 28px;
+}
+
+.cta-line.subtitle {
+  width: 40%;
+}
+
+.cta-button {
+  width: 150px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

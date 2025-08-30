@@ -1,0 +1,151 @@
+/* ===== Who Can Use Section ===== */
+.who-can-use-section {
+  text-align: center;
+  padding: 60px 5%;
+  background-color: #ffffff;
+}
+
+/* Header */
+.who-can-use-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Feature Cards */
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 30px 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.7s; }
+.card:nth-child(2) { animation-delay: 0.9s; }
+.card:nth-child(3) { animation-delay: 1.1s; }
+.card:nth-child(4) { animation-delay: 1.3s; }
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Card Icon */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(1.1);
+  animation: zoomFade 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+/* === Keyframes (same as blog style) === */
+@keyframes zoomFade {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* 💻 Large Tablets (<=992px) */
+@media (max-width: 992px) {
+  .who-can-use-section h2 { font-size: 28px; }
+  .subtitle { font-size: 15px; }
+  .feature-cards { gap: 24px; }
+  .card { max-width: 260px; padding: 24px 18px; }
+  .card-icon { width: 50px; height: 50px; }
+  .card h3 { font-size: 18px; }
+  .card p { font-size: 13px; }
+}
+
+/* 📲 Tablets (<=768px) */
+@media (max-width: 768px) {
+  .who-can-use-section { padding: 40px 20px; }
+  .who-can-use-section h2 { font-size: 26px; }
+  .subtitle { font-size: 14px; margin-bottom: 30px; }
+  .feature-cards { gap: 20px; }
+  .card { max-width: 220px; padding: 20px 16px; }
+  .card-icon { width: 45px; height: 45px; margin-bottom: 16px; }
+  .card h3 { font-size: 17px; }
+  .card p { font-size: 13px; }
+}
+
+/* 📱 Small Mobiles (<=480px) */
+@media (max-width: 480px) {
+  .who-can-use-section { padding: 30px 15px; }
+  .who-can-use-section h2 { font-size: 22px; }
+  .subtitle { font-size: 13px; margin-bottom: 25px; }
+  .feature-cards { gap: 16px; }
+  .card { max-width: 100%; padding: 18px 14px; }
+  .card-icon { width: 40px; height: 40px; margin-bottom: 14px; }
+  .card h3 { font-size: 16px; }
+  .card p { font-size: 12px; }
+}
+
+/* 📱 Extra Small (<=360px) */
+@media (max-width: 360px) {
+  .who-can-use-section { padding: 20px 10px; }
+  .who-can-use-section h2 { font-size: 18px; }
+  .subtitle { font-size: 12px; margin-bottom: 20px; }
+  .feature-cards { gap: 12px; }
+  .card { max-width: 100%; padding: 14px 10px; }
+  .card-icon { width: 35px; height: 35px; margin-bottom: 12px; }
+  .card h3 { font-size: 14px; }
+  .card p { font-size: 11px; }
+}

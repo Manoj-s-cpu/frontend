@@ -1,0 +1,188 @@
+/* ===== Banner Base ===== */
+.banner {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+  box-sizing: border-box;
+  gap: 60px;
+  transition: all 0.3s ease;
+}
+
+.banner-content { 
+  max-width: 600px; 
+}
+
+/* ===== Title Animation ===== */
+.banner-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+.banner-title .highlight { color: #4CAF4F; }
+
+/* ===== Subtitle Animation ===== */
+.banner-subtitle {
+  margin: 0 0 30px;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* ===== Banner Button (Glow like Navbar) ===== */
+.banner-btn {
+  background-color: #4CAF4F;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 220px;
+  width: 100%;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: glowPulse 3s infinite ease-in-out;  /* 🌟 glow animation */
+  outline: none;
+}
+
+/* Glow Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 2px #4CAF4F, 0 0 4px #4CAF4F;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 4px #3b9440, 0 0 8px #3b9440;
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 2px #4CAF4F, 0 0 4px #4CAF4F;
+    transform: scale(1);
+  }
+}
+
+.banner-btn:hover {
+  background-color: #3b9440;
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #3b9440, 0 0 12px #3b9440;
+}
+
+.banner-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.banner-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+
+/* 📱 Extra Small (<=360px) */
+@media (max-width: 360px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    gap: 20px;
+  }
+  .banner-title { font-size: 20px; }
+  .banner-subtitle { font-size: 13px; }
+  .banner-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .banner-image img { max-width: 80%; }
+}
+
+/* 📱 Small Mobile (361px–480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 24px;
+  }
+  .banner-title { font-size: 24px; }
+  .banner-subtitle { font-size: 14px; }
+  .banner-btn {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .banner-image img { max-width: 85%; }
+}
+
+/* 📲 Tablets (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 32px;
+    gap: 32px;
+  }
+  .banner-title { font-size: 32px; }
+  .banner-subtitle { font-size: 15px; }
+  .banner-btn {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .banner-image img { max-width: 70%; }
+}
+
+/* 💻 Large Tablets (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 40px 60px;
+    gap: 60px;
+  }
+  .banner-title { font-size: 38px; }
+  .banner-subtitle { font-size: 16px; }
+  .banner-image img { max-width: 420px; }
+}
+
+/* 🖥️ Desktop (>=1025px) */
+@media (min-width: 1025px) {
+  .banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 60px 80px;
+    gap: 100px;
+  }
+  .banner-title { font-size: 48px; }
+  .banner-subtitle { font-size: 18px; }
+  .banner-btn { width: auto; }
+  .banner-image img { max-width: 500px; }
+}

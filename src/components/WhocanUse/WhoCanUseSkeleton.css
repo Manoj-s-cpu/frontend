@@ -1,0 +1,40 @@
+.who-skeleton {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.skeleton {
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin: 10px auto;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+  width: 250px;
+  height: 30px;
+}
+
+.skeleton-subtitle {
+  width: 400px;
+  height: 18px;
+}
+
+.who-skeleton-grid {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.skeleton-card {
+  width: 250px;
+  height: 150px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}

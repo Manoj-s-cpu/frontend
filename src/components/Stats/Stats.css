@@ -1,0 +1,175 @@
+/* ===== Wrapper ===== */
+.stats-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #f8f9fa;
+  gap: 60px;
+
+  /* hidden before view */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.stats-wrapper.inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Left Side ===== */
+.stats-left {
+  flex: 1;
+}
+
+.stats-left h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.4;
+}
+
+.stats-left h2 span {
+  color: #4CAF50; /* green highlight */
+}
+
+.stats-left p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== Right Side ===== */
+.stats-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 50px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animate cards when in view */
+.stats-wrapper.inview .stat-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stats-wrapper.inview .stat-card:nth-child(1) { transition-delay: 0.2s; }
+.stats-wrapper.inview .stat-card:nth-child(2) { transition-delay: 0.4s; }
+.stats-wrapper.inview .stat-card:nth-child(3) { transition-delay: 0.6s; }
+.stats-wrapper.inview .stat-card:nth-child(4) { transition-delay: 0.8s; }
+
+/* ===== Icons ===== */
+.stat-icon {
+  font-size: 38px;
+  color: #4CAF50;
+  flex-shrink: 0;
+  animation: iconPulse 2s infinite ease-in-out;
+}
+
+/* Icon Pulse animation */
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+/* ===== Text ===== */
+.stat-card h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.stat-card p {
+  font-size: 15px;
+  margin: 2px 0 0;
+  color: #666;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .stats-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 40px;
+    gap: 40px;
+  }
+
+  .stats-right {
+    gap: 25px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-wrapper {
+    padding: 40px 25px;
+    gap: 30px;
+  }
+
+  .stats-left h2 {
+    font-size: 30px;
+  }
+
+  .stats-right {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+
+  .stat-icon {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-wrapper {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .stats-left h2 {
+    font-size: 26px;
+  }
+
+  .stats-right {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .stat-card {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats-wrapper {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .stats-left h2 {
+    font-size: 22px;
+  }
+
+  .stat-card h3 {
+    font-size: 18px;
+  }
+
+  .stat-icon {
+    font-size: 28px;
+  }
+}

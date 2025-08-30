@@ -1,0 +1,249 @@
+/* ===== Feature Section (Base) ===== */
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 80px;
+  gap: 60px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.feature-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Image Area ===== */
+.feature-image {
+  width: 45%;
+  max-width: 450px;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: featureImgSlide 0.8s ease-out forwards;
+}
+.feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===== Text Area ===== */
+.feature-text {
+  width: 50%;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateX(40px);
+  animation: featureTextSlide 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+.feature-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.3;
+
+  /* tiny pop-in */
+  opacity: 0;
+  transform: translateY(12px);
+  animation: titlePop 0.7s cubic-bezier(0.25, 1.1, 0.5, 1) forwards;
+  animation-delay: 0.35s;
+}
+.feature-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+
+  opacity: 0;
+  transform: translateY(14px);
+  animation: textFade 0.7s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* ===== Button (Always-Glow) ===== *//* ===== Compact Learn Button (Always-Glow) ===== */
+.learn-btn {
+  --btn: #4caf50;
+  --btn-dark: #3e8e41;
+
+  background: var(--btn);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 11px;       /* 🔽 smaller padding */
+  font-size: 14px;         /* 🔽 smaller font */
+  font-weight: 600;
+  cursor: pointer;
+
+  width: 100%;
+  max-width: 140px;        /* 🔽 max width reduced */
+
+  /* entry + glow */
+  opacity: 0;
+  transform: translateY(8px);
+  animation:
+    featureBtnUp 0.6s ease-out forwards 0.7s,
+    glowPulse 2.2s ease-in-out infinite 0.8s;
+
+  box-shadow:
+    0 0 3px rgba(34, 197, 94, 0.35),
+    0 0 8px rgba(34, 197, 94, 0.22);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+.learn-btn:hover {
+  background: var(--btn-dark);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 0 5px rgba(22, 163, 74, 0.5),
+    0 0 10px rgba(22, 163, 74, 0.35);
+}
+.learn-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+.learn-btn:focus {
+  outline: none;
+  box-shadow:
+    0 0 5px rgba(22, 163, 74, 0.5),
+    0 0 10px rgba(22, 163, 74, 0.35);
+}
+
+/* remove ugly default focus ring on some mobile browsers */
+.learn-btn::-moz-focus-inner { border: 0; }
+
+/* Subtle ambient ring using pseudo element */
+.learn-btn::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+/* ===== Animations ===== */
+@keyframes featureImgSlide {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes featureTextSlide {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes titlePop {
+  0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+  70% { opacity: 1; transform: translateY(-3px) scale(1.015); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes textFade {
+  0% { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes featureBtnUp {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* 🔄 Always-on gentle glow (same vibe as navbar/banner) */
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 0 3px rgba(34, 197, 94, 0.35),
+      0 0 8px rgba(34, 197, 94, 0.22);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow:
+      0 0 6px rgba(22, 163, 74, 0.55),
+      0 0 14px rgba(22, 163, 74, 0.35);
+    transform: translateY(-1px);
+  }
+  100% {
+    box-shadow:
+      0 0 3px rgba(34, 197, 94, 0.35),
+      0 0 8px rgba(34, 197, 94, 0.22);
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* 💻 Large Tablets (<= 992px) */
+@media (max-width: 992px) {
+  .feature-section {
+    padding: 30px 40px;
+    gap: 40px;
+  }
+  .feature-content { gap: 40px; }
+  .feature-text h2 { font-size: 28px; }
+  .feature-text p { font-size: 15px; }
+  .feature-image { max-width: 400px; }
+}
+
+/* 📲 Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .feature-section { padding: 26px 22px; }
+  .feature-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+  .feature-image, .feature-text { width: 100%; }
+  .feature-text h2 { font-size: 24px; }
+  .feature-text p { font-size: 14px; margin-bottom: 20px; }
+  .learn-btn { width: 100%; max-width: 220px; margin: 0 auto; }
+}
+
+/* 📱 Small Mobiles (<= 480px) */
+@media (max-width: 480px) {
+  .feature-section { padding: 20px 16px; gap: 20px; }
+  .feature-image { max-width: 92%; margin: 0 auto; }
+  .feature-text h2 { font-size: 20px; }
+  .feature-text p { font-size: 13px; }
+  .learn-btn {
+    width: 100%;
+    max-width: 220px;   /* size consistent */
+    font-size: 15px;
+    padding: 11px 22px;
+  }
+}
+
+/* 📱 Extra Small (<= 360px) */
+@media (max-width: 360px) {
+  .feature-section { padding: 16px 12px; gap: 16px; }
+  .feature-text h2 { font-size: 18px; }
+  .feature-text p { font-size: 12px; line-height: 1.45; }
+  .learn-btn {
+    width: 100%;
+    max-width: 220px;   /* keep same width */
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* 🧘 Accessibility – reduce motion users */
+@media (prefers-reduced-motion: reduce) {
+  .feature-image,
+  .feature-text,
+  .feature-text h2,
+  .feature-text p,
+  .learn-btn {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+  .learn-btn {
+    box-shadow:
+      0 0 3px rgba(34, 197, 94, 0.35),
+      0 0 8px rgba(34, 197, 94, 0.22);
+  }
+}
+
+
+
